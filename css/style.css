@@ -1,0 +1,95 @@
+/* Pels Pèls — per un pèl: caramel, espresso i pètal */
+:root{
+  --cream:#fbf3ea;
+  --honey:#c8894a;
+  --caramel:#a8672f;
+  --espresso:#2b1a12;
+  --petal:#d9546e;
+  --mute:#8a6f60;
+  --f-sans:'Epilogue',system-ui,sans-serif;
+  --f-hand:'Nothing You Could Do',cursive;
+  --pad:clamp(18px,4vw,64px);
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--espresso);font-family:var(--f-sans);font-size:clamp(16px,1.05vw,18px);line-height:1.6;overflow-x:hidden}
+main{overflow-x:clip}
+a{color:inherit}
+img{display:block;max-width:100%}
+em{font-style:italic;color:var(--petal)}
+.hand{font-family:var(--f-hand)}
+.kicker{font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--caramel)}
+.btn{display:inline-flex;align-items:center;gap:.5em;padding:1em 1.7em;border-radius:100px;background:var(--espresso);color:var(--cream);text-decoration:none;font-weight:600;transition:transform .5s var(--ease),background .4s}
+.btn:hover{transform:translateY(-3px) rotate(-1deg);background:var(--petal)}
+.btn--ghost{background:transparent;color:var(--espresso);box-shadow:inset 0 0 0 1.5px var(--espresso)}
+.btn--ghost:hover{color:var(--cream)}
+
+.nav{position:fixed;inset:0 0 auto;z-index:40;display:flex;align-items:center;justify-content:space-between;padding:1rem var(--pad);mix-blend-mode:difference;color:#fff}
+.nav__logo{font-weight:800;font-size:1.3rem;text-decoration:none;letter-spacing:-.02em}
+.nav__cta{font-weight:600;text-decoration:none;padding:.5em 1.1em;border:1.5px solid #fff;border-radius:100px}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:flex-end;padding:6rem var(--pad) clamp(40px,8vh,90px);background:radial-gradient(ellipse at 50% 0%,#fff6ec,var(--cream) 60%);overflow:hidden}
+#hair{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y}
+.hero__txt{position:relative;z-index:2;max-width:44rem;pointer-events:none}
+.hero__txt a{pointer-events:auto}
+.hero .hand{font-size:1.3rem;color:var(--caramel)}
+.hero h1{font-weight:800;font-size:clamp(4.4rem,15vw,13rem);line-height:.82;letter-spacing:-.05em;margin:.2rem 0 .8rem}
+.hero__lead{max-width:30rem;font-size:1.12rem;color:var(--mute)}
+.hero__row{display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem;margin-top:1.8rem}
+.rate{font-weight:600;color:var(--mute)}
+
+/* ---------- mechón continuo ---------- */
+.strand-wrap{position:relative}
+.strand{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none;overflow:visible;z-index:0}
+.strand path{fill:none;stroke:var(--honey);stroke-width:2.2;stroke-linecap:round;opacity:.55}
+.strand-wrap>section{position:relative;z-index:1}
+
+.idiom{padding:clamp(90px,14vw,180px) var(--pad);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,80px);align-items:center}
+.idiom__big{font-weight:800;font-size:clamp(3rem,8vw,7rem);line-height:.9;letter-spacing:-.04em}
+.idiom__big em{display:block;font-weight:300;font-size:.34em;letter-spacing:0;margin-top:.6rem}
+.idiom__txt{font-size:1.2rem;color:var(--mute)}
+.idiom__txt strong{color:var(--espresso)}
+
+.serv{padding:0 var(--pad) clamp(80px,12vw,150px)}
+.serv h2,.duo h2,.rituals h2,.visit h2{font-weight:800;font-size:clamp(2.4rem,5.4vw,4.6rem);line-height:.95;letter-spacing:-.03em;margin:.4rem 0 1.6rem}
+.serv h2 .hand{font-weight:400;font-size:.7em;letter-spacing:0;color:var(--petal)}
+.serv__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem}
+.serv article{padding:1.6rem;border-radius:24px;background:#fff;box-shadow:0 20px 40px -28px rgba(43,26,18,.4);transition:transform .5s var(--ease)}
+.serv article:hover{transform:translateY(-8px) rotate(-1.2deg)}
+.serv__n{font-family:var(--f-hand);font-size:1.6rem;color:var(--petal)}
+.serv h3{font-weight:800;font-size:1.5rem;letter-spacing:-.02em;margin-bottom:.6rem}
+.serv ul{list-style:none}
+.serv li{padding:.35rem 0;border-top:1px dashed rgba(168,103,47,.35);color:var(--mute)}
+
+.duo{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(24px,5vw,80px);align-items:center;padding:clamp(60px,8vw,120px) var(--pad);background:var(--espresso);color:var(--cream)}
+.duo .kicker{color:var(--honey)}
+.duo__img{border-radius:200px 200px 24px 24px;border-radius:30px;overflow:hidden;aspect-ratio:3/4;transform:rotate(-2deg)}
+.duo__img img{width:100%;height:100%;object-fit:cover}
+.duo__q{font-family:var(--f-hand);font-size:clamp(1.6rem,2.8vw,2.4rem);color:var(--honey);line-height:1.2;margin-bottom:1.2rem}
+.duo p:not(.duo__q):not(.kicker){color:rgba(251,243,234,.8);margin-bottom:1rem;max-width:36rem}
+.who{display:block;font-size:.85rem;color:var(--honey);margin-top:.3rem}
+
+.rituals{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.8fr);gap:clamp(18px,3vw,40px);align-items:center;padding:clamp(80px,12vw,150px) var(--pad)}
+.rituals figure img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:24px}
+.rituals figcaption{margin-top:.6rem;font-size:1.3rem;color:var(--petal);text-align:center}
+.r2{transform:translateY(3rem) rotate(3deg)}
+.rituals__txt p:last-child{color:var(--mute)}
+
+.gal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;padding:0 var(--pad) clamp(80px,12vw,150px)}
+.gal img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:22px}
+.gal img:nth-child(even){transform:translateY(2.4rem)}
+
+.visit{padding:0 var(--pad) clamp(80px,12vw,140px);text-align:center}
+.visit__h{margin:1.4rem 0 1.8rem;color:var(--mute)}
+.visit__h b{color:var(--espresso)}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem}
+.foot{padding:1.6rem;text-align:center;color:var(--mute)}
+.foot .hand{font-size:1.4rem;color:var(--petal)}
+
+@media (max-width:860px){
+  .idiom,.duo,.rituals{grid-template-columns:minmax(0,1fr)}
+  .serv__grid,.gal{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .r2{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
